@@ -1,0 +1,44 @@
+<!--index.wxml-->
+<view class="container">
+
+    <!--banner-->
+    <swiper indicator-dots="{{indicatorDots}}"
+        autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+        <block wx:for="{{banner}}">
+            <swiper-item>
+                <image src="{{item}}" class="slide-image" width="355" height="150"/>
+            </swiper-item>
+        </block>
+    </swiper>
+
+    <!--menu-->
+    <view class="menu">
+        <block wx:for="{{menu}}">
+            <view class="menuBox">
+                <image class="menuImg" src="{{item.menuImg}}" data-num="{{item.num}}" bindtap="menuToView"/>
+            </view>
+        </block>
+    </view>
+
+    <!--list-->
+    <view class="list">
+        <block wx:for="{{listImg}}">
+            <image class="listImg" src="{{item}}"/>
+        </block>
+    </view>
+
+    <!--底部button-->
+    <view class="goWrite">
+        <text class="goWriteText" bindtap="toWriteView">写祝福</text>
+    </view>
+</view>
+
+
+
+<!--<view class="userinfo">
+    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
+    <block wx:else>
+      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
+      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+    </block>
+  </view>-->
